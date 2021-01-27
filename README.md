@@ -1,7 +1,7 @@
 # graph-traversal
 
 graph traversal refers to the process of visiting each vertex in a graph.
-note that any argument pass to the algorithm function should be a list of vertex and dic represents adjacency list, like this:
+note that any argument pass to the algorithm function should be a list of vertices and dic represents adjacency list, like this:
 
 vertices_list = ['B', 'C', 'D', 'E', 'F', 'G', 'H']
 adj_list = {
