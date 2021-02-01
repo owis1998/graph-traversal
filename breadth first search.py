@@ -1,19 +1,18 @@
-visited_vertices = []
-visited = []
+def algorithm(graph):
+	visited_vertices = []
+	visited = []
+	def fn(vertices):
+		if not vertices.peekFirst() in visited_vertices:
+			visited_vertices.append(vertices.peekFirst())
 
-def algorithm(vertex, adj_list):
-	def fn(vertex, adj_list):
-		if not vertex in visited_vertices:
-			visited_vertices.append(vertex)
-
-		for ver in adj_list[vertex]:
+		for ver in vertices.getAll():
 			if not ver in visited_vertices:
 				visited_vertices.append(ver)
 
-		visited.append(vertex)
-		for ver in adj_list[vertex]:
+		visited.append(vertices.peekFirst())
+		for ver in vertices.getAll():
 			if not ver in visited:
-				fn(ver, adj_list)
+				fn(graph.find(ver))
 
-	fn(vertex, adj_list)
+	fn(graph.get_first())
 	return visited_vertices
