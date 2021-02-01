@@ -1,12 +1,11 @@
-visited_vertices = []
-
-def algorihm(vertex, adj_list):
-	def fn(vertex, adj_list):
-		visited_vertices.append(vertex)
+def algorihm(graph):
+	visited_vertices = []
+	def fn(vertices):
+		visited_vertices.append(vertices.peekFirst())
 		
-		for ver in adj_list[vertex]:
+		for ver in vertices.getAll():
 			if not ver in visited_vertices:
-				fn(ver, adj_list)
+				fn(graph.find(ver))
 
-	fn(vertex, adj_list)
+	fn(graph.get_first())
 	return visited_vertices
